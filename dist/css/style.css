@@ -56,7 +56,7 @@ body {
   z-index: 1;
 }
 
-.hidden {
+.selector-list-box_hidden {
   display: none;
 }
 

@@ -54,12 +54,12 @@ export class Selector {
     if (otherInstances.some((instance) => instance.selector.#isOpen)) {
       otherInstances.forEach((instance) => instance.selector.#closeListBox());
     }
-    this.#selectorListBox.classList.toggle("hidden");
+    this.#selectorListBox.classList.toggle("selector-list-box_hidden");
     this.#selectorBodyArrow.classList.toggle("selector-body__arrow_rotated");
   }
 
   #closeListBox() {
-    this.#selectorListBox.classList.add("hidden");
+    this.#selectorListBox.classList.add("selector-list-box_hidden");
     this.#isOpen = false;
     this.#selectorBodyArrow.classList.remove("selector-body__arrow_rotated");
   }
@@ -114,7 +114,7 @@ export class Selector {
 
     this.#selectorListBox = createDOMElement({
       element: "ul",
-      classes: "selector-list-box hidden",
+      classes: "selector-list-box selector-list-box_hidden",
       children: [this.#createOptionElements()],
       parent: selectorContainer,
       listeners: [{ type: "click", func: (e) => this.#selectOption(e) }],
